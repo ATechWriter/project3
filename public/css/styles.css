@@ -1,0 +1,25 @@
+
+@font-face {
+    font-family: getDigital;
+    src: url(DJBGetDigital.ttf);
+}
+
+header {
+    font-family: getDigital;
+    color: #47C01A;
+    font-size: 40px;
+    background-color: black;
+    padding: 15px;
+}
+
+header a:link, header a:visited, header a:hover, header a:active {
+    color: #47C01A;
+    text-decoration: none;
+}
+
+
+
+body {
+    background-color: #D3CBC6;
+    color: black;
+}

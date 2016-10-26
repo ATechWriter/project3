@@ -1,27 +1,36 @@
-# Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# Developer's BFF
+A tool for web developers that includes two generators: one for fake text and one for fake users.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Submitted as a project for the course Dynamic Web Applications.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Project Requirements
+I fulfilled the following requirements that are specific to P3:
 
-## Official Documentation
+* __Package Use__: I used the package copycat by Github user gitlov to scrape some websites for first and last names, which I used to populate the files for random user names.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Highlights
+To create the word list for the lorem ipsum generator, I used Wordlist Maker to turn the text of _Frankenstein_ into a list of words with no duplicates in all lowercase.
 
-## Contributing
+## Citations
+This project includes or references the following tools, resources, etc.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+* __Laravel__: The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-## Security Vulnerabilities
+* __Debugbar__: An open-source Laravel debugging tool by Github user Barryvdh (local environment only).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+* __Faker__: An open-source Laravel package for generating fake users.
 
-## License
+* __DJB Get Digital Font__: By Darcy Baldwin Fonts, retrieved from [FontSpace](http://www.fontspace.com/darcy-baldwin-fonts/djb-get-digital). Licensed as freeware for personal use; commercial use requires payment.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+* __[W3Schools](http://www.w3schools.com)__: General reference
+
+* __[Paletton](http://paletton.com)__: Color scheme assistance.
+
+* __[Project Gutenburg](http://www.gutenberg.org/cache/epub/84/pg84.txt)__: To retrieve the text of _Frankenstein_ by Mary Shelley.
+
+* __[Wordlist Maker](http://design215.com/toolbox/wordlist.php)__: To compress text of _Frankenstein_ into a list of words.
+
+* __[php.net](http://php.net)__: PHP documentation for command and syntax reference.
+
+* __[Stack Overflow](http://stackoverflow.com)__: Debugging help.
