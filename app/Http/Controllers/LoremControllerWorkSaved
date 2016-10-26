@@ -9,76 +9,41 @@ class LoremController extends Controller
 {
     public function generate(Request $request)
     {
+
+        # Set up some variables
+        $paragraph = '<p>';
+        $allParas = array();
+        $lorem = '';
+
         # Get the number of paragraphs the user requested
-        //$paraCount = $request->input('paraCount');
+        $paraCount = $request->input('paraCount');
 
         # Turn the word list into an array
-        //include_once 'Constants.php';
+        $wordFile = base_path('resources/frankenWords.txt');
+        $wordArray = file($wordFile);
 
-        //My attempts to fix the lost file problem:
-        //define('__ROOT__', dirname(dirname(__FILE__)));
-        //$wordFile = (__ROOT__.'/Controllers/frankenWords.txt');
-        //$wordFile = 'frankenWords.txt';
-
-
-        //Set aside for now: $wordFile = base_path('resources/frankenWords.txt');
-        //Use this one! $wordFile = base_path ( 'resources/frankenWords.json' );
-
-        // This is the one with Jenni's input:
-        //$wordList = fopen($wordFile, 'r') or die('Unable to open wordFile');
-        //$wordListRead = fread($wordList, filesize($wordFile)-1);
-
-        // Probably not good:
-        //$wordListRead = fread($wordList, filesize($wordFile));
-
-        //Monday's experiment space!
-        // $wordList = @fopen($wordFile, 'r');
-        // if ($wordList) {
-        //    $wordArray = explode("\n", fread($wordList, filesize($wordFile)));
-        // }
-        //Proven: Previous bit returns an array. Can select an item from it.
-        //Theory: Let's try to change the .txt file to a .json...
-        // $wordList = file_get_contents ( $wordFile );
-        // if ( $wordList ) {
-        //     $wordArray = json_decode ( $wordList, true );
-        // }
-        //
-        // $wordId = rand ( 0, 6964 );
-        // $word = $wordArray [ $wordId ];
-
-        //Bloody hell. Can it manage with a dead non-array, non-file?
-        $word = 'theactualwordgoeshere';
-        return view ( 'lorem' ) -> with ( 'word', $word );
-
-
-/* Cutting out a chunk to focus on the stupid array
-        //End of Monday's experiment space
-
-        //fclose($wordList);
-        //$wordArray = explode(' ', $wordListRead);
-
-        # Create as many paragraphs as the user requested
+        # Create the requested number of paragraphs
         for ($p = $paraCount; $p > 0; $p--) {
 
-            $paragraph = '';
-            $allParas = [''];
+            $sentence = '';
 
             # Determine the number of sentences in the paragraph
             $sentenceCount = rand(4, 20);
 
             for ($s = $sentenceCount; $s > 0; $s--) {
 
-                $sentence = '';
+                $word = '';
 
                 # Determine the number of words in the sentence
                 $wordCount = rand(4, 9);
 
                 for ($w = 1; $w <= $wordCount; $w++) {
-
-                    # Pick an arbitrary word from the arrayified list
+                    # Pick an arbitrary word from the arrayed list
                     $wordId = rand(0, 6964);
-                    //Something Jenni tested: $wordId = rand(0, 0);
                     $word = $wordArray[$wordId];
+
+                    # Trim off trailing whitespace
+                    $word = rtrim($word);
 
                     # If it's the first in the sentence, capitalize
                     if ($w == 1) {
@@ -88,38 +53,28 @@ class LoremController extends Controller
                     # Join words onto sentence each time through
                     $sentence = $sentence.$word;
 
-                    # Add spaces after words and a period at end of sentence
+                    # Add spaces after words, periods after sentences
                     if ($w == $wordCount) {
-                        $sentence = $sentence.'.';
+                        $sentence = $sentence.'. ';
                     } else {
                         $sentence = $sentence.' ';
                     }
-
                 }
 
                 # Join sentences into paragraphs
-                $paragraph = $paragraph.$sentence.' ';
-                // if ($s == 0) {
-                //     $paragraph = $paragraph.'</p>';
-                // }
-
+                $paragraph = $paragraph.$sentence;
+                    if ($s == 1) {
+                        $paragraph = $paragraph.'</p>';
+                    }
             }
 
-            # Join paragraphs together
-            $allParas = array_push($allParas, $paragraph);
+        # Join paragraphs together
+        array_push($allParas, $paragraph);
+        $lorem = implode('', $allParas);
 
-            // # Return each paragraph as a lorem-classed <p> element
-            // $lorem = '<p class="lorem">'.$paragraph.'</p>';
+    }
 
-        }
-
-        // # Send it to a view
-        // return view('lorem')->with('allParas', $allParas);
-
-End of cut out chunk for array fixing */
-
-        # But for now, just get it to display allParas
-
-        //echo $allParas;
+        # Send it to a view
+        return view('lorem')->with('lorem', $lorem);
     }
 }
