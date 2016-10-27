@@ -26,7 +26,7 @@ This project includes or references the following tools, resources, etc.
 
 * __Debugbar__: An open-source Laravel debugging tool by Github user Barryvdh (local environment only).
 
-* __Faker__(https://github.com/fzaninotto/Faker): An open-source Laravel package for generating fake users by Github user fzaninotto.
+* __[Faker](https://github.com/fzaninotto/Faker)__: An open-source Laravel package for generating fake users by Github user fzaninotto.
 
 * __DJB Get Digital Font__: By Darcy Baldwin Fonts, retrieved from [FontSpace](http://www.fontspace.com/darcy-baldwin-fonts/djb-get-digital). Licensed as freeware for personal use; commercial use requires payment.
 
