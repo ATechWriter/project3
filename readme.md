@@ -11,6 +11,9 @@ Submitted as a project for the course Dynamic Web Applications.
 
 Minor correction to demo video: I tried to use the scraper package to pull names for the user generator (not for the lorem generator).
 
+## Note About "Project3" Subdomain
+Jenni, you said it was okay for me to use the project3 subdomain instead of p3 because I needed to abandon my initial project.
+
 ## Package Used
 Project 3 requires use of a package. To fulfill that requirement, I used the package Faker by Github user fzaninotto to create first and last names for the users generator.
 
