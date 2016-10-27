@@ -4,10 +4,15 @@ A tool for web developers that includes two generators: one for fake text and on
 
 Submitted as a project for the course Dynamic Web Applications.
 
-## Project Requirements
-I fulfilled the following requirements that are specific to P3:
+## Links
+* [Live site](http://project3.josquinia.org)
+* [Github Repository](https://github.com/ATechWriter/project3)
+* [Demo video](http://www.screencast.com/t/pSXqRpekYr)
 
-* __Package Use__: I used the package Faker by Github user fzaninotto to fake first and last names for the users generator.
+Minor correction to demo video: I tried to use the scraper package to pull names for the user generator (not for the lorem generator).
+
+## Package Used
+Project 3 requires use of a package. To fulfill that requirement, I used the package Faker by Github user fzaninotto to create first and last names for the users generator.
 
 ## Highlights
 To create the word list for the lorem ipsum generator, I used Wordlist Maker to turn the text of _Frankenstein_ into a list of words with no duplicates in all lowercase.
