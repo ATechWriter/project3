@@ -17,7 +17,7 @@ class LoremController extends Controller
         $wordArray = file($wordFile);
 
         # Determine the number of words in the sentence
-        $wordCount = rand(4, 9);
+        $wordCount = rand(2, 9);
 
         for ($w = 1; $w <= $wordCount; $w++) {
             # Pick an arbitrary word from the arrayed list
@@ -52,7 +52,7 @@ class LoremController extends Controller
         $paragraph = '<p>';
 
         # Determine the number of sentences in the paragraph
-        $sentenceCount = rand(4, 20);
+        $sentenceCount = rand(2, 20);
 
         # Concatenate that many sentences into a paragraph
         for ($s = $sentenceCount; $s > 0; $s--) {
@@ -72,7 +72,10 @@ class LoremController extends Controller
 
     public function generate(Request $request)
     {
-        # Validation goes here: $this->validate($request, [parameters]);
+        # Validate user input
+        $this->validate($request, [
+            'paraCount' => 'required|integer|between:1,20',
+        ]);
 
         $allParas = array();
         $lorem = '';

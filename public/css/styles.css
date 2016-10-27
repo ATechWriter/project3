@@ -17,9 +17,43 @@ header a:link, header a:visited, header a:hover, header a:active {
     text-decoration: none;
 }
 
-
-
 body {
     background-color: #D3CBC6;
     color: black;
+    font-family: sans-serif;
+    margin: 3px 50px 15px 50px;
+}
+
+form {
+    margin-left: 75px;
+}
+
+div.lorem p {
+    margin-left: 75px;
+    font-family: serif;
+}
+
+table {
+    background-color: white;
+}
+
+th {
+    background-color: black;
+    color: #47C01A;
+    padding: 6px;
+}
+
+td {
+    padding: 6px;
+}
+
+ul.errors {
+    list-style-type: none;
+    color: red;
+    font-size: small;
+    font-style: italic;
+}
+
+footer p {
+    font-size: small;
 }

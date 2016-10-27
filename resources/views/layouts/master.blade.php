@@ -26,4 +26,8 @@
     @yield('body')
 
 </body>
+
+<footer>
+    <p>A project submitted for the course "Dynamic Web Applications"</p>
+</footer>
 </html>

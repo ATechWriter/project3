@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <h1>Here Are Your Make-Believe Users</h1>
+    <h1>Here Are Your Fake Users</h1>
+
+        <a href="index.php" class="return">Back to the tools</a>
 
         <p> {!! $usersTable !!} </p>
 

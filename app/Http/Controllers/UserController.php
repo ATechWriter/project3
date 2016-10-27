@@ -11,7 +11,10 @@ class UserController extends Controller
 {
     public function generate(Request $request)
     {
-        # Validation to go here: $this->validate($request, [parameters]);
+        # Validate user input
+        $this->validate($request, [
+            'userCount' => 'required|integer|between:1,200',
+        ]);
 
         # Set up fzaninotto's Faker package
         $faker = Faker::create();

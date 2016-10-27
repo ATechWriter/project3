@@ -2,8 +2,10 @@
 
 @section('content')
 
-    <h1>Here's Your FrankenIpsum Text</h1>
+    <h1>Here Is Your FrankenIpsum Text</h1>
 
-        <p> {!! $lorem !!} </p>
+    <div class='lorem'>
+        {!! $lorem !!}
+    </div>
 
 @endsection
