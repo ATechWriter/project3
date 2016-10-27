@@ -6,7 +6,7 @@
 
         <h1>Lorem Ipsem Generator</h1>
 
-        <p>Create paragraphs of fake text for use in mockups</p>
+        <p>Create paragraphs of fake text for use in mockups with words courtesy of Mary Shelley's classic novel <i>Frankenstein</i></p>
 
         <form method='POST' action='/lorem'>
             {{ csrf_field() }}

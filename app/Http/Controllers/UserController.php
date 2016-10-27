@@ -11,40 +11,36 @@ class UserController extends Controller
 {
     public function generate(Request $request)
     {
-        # Get the number of users requested
+        # Validation to go here: $this->validate($request, [parameters]);
+
+        # Set up fzaninotto's Faker package
+        $faker = Faker::create();
+
+        # Get the info the user submitted
         $userCount = $request->input('userCount');
+        $birthdateOption = $request->input('birthdate');
 
-        # Turn the first names file into an array
-        //include_once 'Constants.php';
-        $firstFile = base_path('resources/first.txt');
-        $firstList = fopen($firstFile, 'r');
-        $firstListRead = fread($firstList, filesize($firstFile));
-        $firstArray = explode(PHP_EOL, $firstListRead);
-
-        # Turn the last names file into an array
-        $lastFile = base_path('resources/last.txt');
-        $lastList = fopen($lastFile, 'r');
-        $lastListRead = fread($lastList, filesize($lastFile));
-        $lastArray = explode(PHP_EOL, $lastListRead);
+        # Set up the table header row
+        $usersTable = '<table><tr><th>First</th><th>Last</th>';
+        if (!empty($birthdateOption)) {
+            $usersTable = $usersTable.'<th>Birthdate</th></tr>';
+        } else {
+            $usersTable = $usersTable.'</tr>';
+        }
 
         # Generate the requested number of users
-        $usersTable = '<table>';
+
         for ($i = $userCount; $i > 0; $i--) {
 
-            # Pick an arbitrary first and last name
-            $firstId = rand(0, 9);
-            $first = $firstArray[$firstId];
-
-            $lastId = rand(0, 9);
-            $last = $lastArray[$lastId];
-
+            # User Faker to generate first and last name
+            $first = $faker->firstName;
+            $last = $faker->lastName;
             $usersTable = $usersTable.'<tr><td>'.$first.'</td><td>'.$last.'</td>';
 
             # If birthdate option selected, add a birthdate
-            $birthdateOption = $request->input('birthdate');
             if (!empty($birthdateOption)) {
 
-                # Generate an arbitrary date and add to the table row
+                # Generate an arbitrary date no later than today and add to the table row
                 $now = time();
                 $birthtime = rand(1, $now);
                 $birthdate = date('m/d/Y', $birthtime);
@@ -55,6 +51,11 @@ class UserController extends Controller
             # End the table row
             $usersTable = $usersTable.'</tr>';
         }
-        echo $usersTable.'</table><br/>';
+
+        # End the table
+        $usersTable = $usersTable.'</table><br/>';
+
+        # Send to a view
+        return view('users')->with('usersTable', $usersTable);
     }
 }

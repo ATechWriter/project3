@@ -72,6 +72,8 @@ class LoremController extends Controller
 
     public function generate(Request $request)
     {
+        # Validation goes here: $this->validate($request, [parameters]);
+
         $allParas = array();
         $lorem = '';
 
