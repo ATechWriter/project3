@@ -5,7 +5,7 @@ A tool for web developers that includes two generators: one for fake text and on
 Submitted as a project for the course Dynamic Web Applications.
 
 ## Links
-* [Live site](http://project3.josquinia.org)
+* [Live site](http://p3.josquinia.org)
 * [Github Repository](https://github.com/ATechWriter/project3)
 * [Demo video](http://www.screencast.com/t/pSXqRpekYr)
 
@@ -13,6 +13,8 @@ Minor correction to demo video: I tried to use the scraper package to pull names
 
 ## Note About "Project3" Subdomain
 Jenni, you said it was okay for me to use the project3 subdomain instead of p3 because I needed to abandon my initial project.
+
+ETA: I fixed it. The standard syntax domain works now.
 
 ## Package Used
 Project 3 requires use of a package. To fulfill that requirement, I used the package Faker by Github user fzaninotto to create first and last names for the users generator.
